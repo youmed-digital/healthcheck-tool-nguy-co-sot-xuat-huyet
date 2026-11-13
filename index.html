@@ -1,139 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Đánh giá nguy cơ sốt xuất huyết</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kiểm tra yếu tố nguy cơ diễn biến nặng khi mắc sốt xuất huyết</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#dfe9f3;--panel:#e9f5ff;--card:#fff;--ink:#12305f;--mute:#4a5a72;--line:#cfdcea;--brand:#1c4a9c;--brand2:#f08a24;--warn-bg:#fff1e0;--warn-line:#f2c48f;--needle:#c8321e;--hub:#fff;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1622;--panel:#14243a;--card:#1b2d47;--ink:#e6efff;--mute:#a9b9d0;--line:#2b4262;--brand:#7fb0ff;--brand2:#f08a24;--warn-bg:#3a2a18;--warn-line:#7a5426;--hub:#1b2d47}}
-:root[data-theme="dark"]{--bg:#0e1622;--panel:#14243a;--card:#1b2d47;--ink:#e6efff;--mute:#a9b9d0;--line:#2b4262;--brand:#7fb0ff;--brand2:#f08a24;--warn-bg:#3a2a18;--warn-line:#7a5426;--hub:#1b2d47}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5;padding:24px 16px}
-.wrap{max-width:860px;margin:0 auto;background:var(--panel);border-radius:20px;padding:28px;box-shadow:0 6px 24px rgba(20,50,100,.12)}
-h1{margin:0 0 6px;font-size:clamp(22px,4.4vw,32px);font-weight:800;line-height:1.2;color:var(--brand)}
-.sub{margin:0 0 18px;color:var(--mute);padding-bottom:16px;border-bottom:1px solid var(--line)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.card h2{font-size:17px;margin:0 0 12px}
-.opt{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer;font-size:15px}
-.opt input{position:absolute;opacity:0}
-.box{flex:none;width:22px;height:22px;border:2px solid var(--brand);border-radius:5px;margin-top:1px;display:grid;place-items:center}
-.opt input[type=radio]+.box{border-radius:50%}
-.opt input:checked+.box{background:var(--brand)}
-.opt input:checked+.box::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
-.opt input[type=radio]:checked+.box::after{width:8px;height:8px;border:0;border-radius:50%;background:#fff;transform:none}
-.opt input:focus-visible+.box{outline:3px solid var(--brand2);outline-offset:2px}
-.opt small{display:block;color:var(--mute);font-size:13px}
-.field{margin-top:14px}
-.field>label,.field>.lbl{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
-.radios{display:flex;gap:22px}
-select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink);font:inherit}
-select:focus-visible,.btn:focus-visible{outline:3px solid var(--brand2);outline-offset:2px}
-.err{color:#c0301c;font-size:13px;margin:6px 0 0;min-height:18px}
-.go{width:100%;margin-top:8px}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:10px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid var(--brand);color:var(--brand);background:transparent;text-align:center}
-.btn.primary{background:linear-gradient(90deg,var(--brand),#2a5db8 55%,var(--brand2));color:#fff;border-color:transparent}
-.btn:hover{filter:brightness(1.07)}
-.res{border-left:1px solid var(--line);padding-left:24px;text-align:center;display:flex;flex-direction:column;align-items:center}
-.gauge{width:100%;max-width:300px}
-.needle{transform-origin:150px 150px;transition:transform 1s cubic-bezier(.3,1.4,.5,1)}
-@media (prefers-reduced-motion:reduce){.needle{transition:none}}
-.lvl{font-size:20px;font-weight:800;margin:4px 0 6px;line-height:1.25}
-.lvl.s0{color:var(--mute)}.lvl.s1{color:#2e9b43}.lvl.s2{color:#d68a00}.lvl.s3{color:#c8321e}
-.adv{font-size:14px;color:var(--mute);margin:0 0 8px;max-width:34ch}
-.warn{margin-top:14px;background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:9px;padding:10px 14px;font-size:14px}
-.ctas{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
-.ctas[hidden]{display:none}
-.disc{margin:16px 4px 0;font-size:13px;color:var(--mute);text-align:center;font-style:italic}
-@media (max-width:700px){body{padding:12px}.wrap{padding:18px 14px}.card{grid-template-columns:1fr;padding:16px}.res{border-left:0;border-top:1px solid var(--line);padding:18px 0 0}.ctas{grid-template-columns:1fr}}
+.nowrap{white-space:nowrap}
+body{margin:0;background:#f5f9fc;color:#10294c;font:16px/1.5 "Roboto",Arial,sans-serif;padding:24px}
+.tool{max-width:1080px;margin:auto;padding:22px;background:linear-gradient(135deg,#1975c9 0%,#2799dc 100%);border-radius:18px}
+h1{color:#fff;text-align:center;font-size:clamp(25px,3vw,32px);font-weight:700;line-height:1.35;margin:4px auto 28px;max-width:930px}
+.columns{display:grid;grid-template-columns:.86fr 1.14fr;gap:22px}
+.panel{background:#fff;border:1px solid #e5edf4;border-radius:12px;padding:24px;min-width:0;box-shadow:0 3px 14px rgba(23,71,110,.06)}
+h2{font-size:18px;text-align:center;margin:0 0 8px;color:#101f35}
+.intro{font-size:14px;text-align:center;margin:0 0 28px;color:#344f73}
+form{display:flex;flex-direction:column}
+label{font-weight:700;display:block;margin:0 0 9px}
+.field{margin:0 0 20px}
+select{width:100%;min-height:50px;padding:12px 34px 12px 13px;font:15px "Roboto",Arial,sans-serif;background:#fff;color:#183b68;border:1px solid #b8c8df;border-radius:8px}
+select:focus-visible,button:focus-visible{outline:3px solid #f2af32;outline-offset:3px}
+.help{font-size:12px;color:#60718c;margin:8px 0 0}
+.actions{display:flex;gap:8px;margin-top:auto;padding-top:22px}
+button{border:0;border-radius:8px;padding:13px 18px;min-height:46px;flex:1;font:700 14px "Roboto",Arial,sans-serif;cursor:pointer}
+.primary{background:#1976d2;color:#fff}.secondary{background:#eaf0fb;color:#1976d2}
+button:hover{filter:brightness(.96)}
+.note{font-size:12px;color:#5f728e;margin:14px 0 0}
+[hidden]{display:none!important}
+.result-panel{display:flex;flex-direction:column;justify-content:center}
+#empty-result{max-width:330px;margin:auto;text-align:center;color:#60758a;font-size:18px;line-height:1.6;padding:36px 0}
+.result-body{margin-top:22px}
+.status{padding:18px;border:1px dashed var(--accent,#7792b9);border-radius:14px;background:var(--tint,#f1f5fc);text-align:center}
+.status small{color:#466487;font-size:14px}
+#result-title{font-size:24px;line-height:1.3;margin:8px 0 0;color:var(--accent,#365b8b)}
+.gauge{max-width:270px;display:block;margin:12px auto 0;width:100%}
+.needle{transform-origin:150px 150px;transition:transform .5s}
+#result-description{margin:14px 0;color:#3d5574;font-size:15px}
+.recommendation{margin-top:18px;padding:15px;background:#eff5ff;border-radius:10px;font-size:14px}.recommendation h3{font-size:16px;color:#1976d2;margin:0 0 7px}.recommendation p{margin:0}.recommendation[hidden]{display:none}
+#result-context{font-size:13px;color:#60718c;margin:0}
+.scale{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center;margin-top:12px}
+.scale span{border-top:4px solid #9dafc5;padding-top:8px;font-size:12px;color:#536580}
+.scale span:nth-child(2){border-color:#efb947}.scale span:nth-child(3){border-color:#e55b55}
+.sources{text-align:center;font-size:12px;margin:18px 0 0;color:#163b72}.sources a{color:#143b74}
+@media(max-width:700px){body{padding:8px}.tool{padding:16px 12px}.columns{grid-template-columns:1fr;gap:14px}.panel{padding:22px 18px}form{min-height:0}.actions{padding-top:0}h1{font-size:25px;margin-bottom:22px}.title-break{display:none}}
+@media(prefers-reduced-motion:reduce){.needle{transition:none}}
+
+/* Adapt to both the viewport and a narrow embedding container. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{padding:clamp(8px,2.5vw,24px)}
+.tool{width:100%;padding:clamp(12px,2.5vw,24px);container-type:inline-size}
+.columns{grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(12px,2vw,22px)}
+.panel{padding:clamp(16px,2.5vw,24px)}
+h1{font-size:clamp(23px,3vw,32px);text-wrap:balance;overflow-wrap:break-word}
+.intro{font-size:15px;line-height:1.65;margin-bottom:22px}
+select{display:block;max-width:100%;min-width:0;font-size:16px;min-height:48px}
+button{font-size:16px;min-height:48px;touch-action:manipulation}
+.actions{flex-wrap:wrap}
+.actions button{flex:1 1 125px}
+#result-title{font-size:clamp(20px,2.5vw,24px);overflow-wrap:break-word}
+#empty-result{font-size:16px;padding:32px 0}
+.scale{gap:6px}.scale span{font-size:clamp(11px,2.5vw,12px)}
+.sources{overflow-wrap:anywhere}
+@media(max-width:480px){
+  .tool{border-radius:12px}
+  .panel{border-radius:10px}
+  h1{font-size:24px;margin-bottom:20px}
+  label{font-size:15px}
+  .field{margin-bottom:20px}
+  .status{padding:14px}
+  .gauge{max-width:240px}
+  .result-body{margin-top:16px}
+}
+@container(max-width:380px){
+  h1{font-size:23px}
+  .panel{padding:16px}
+}
+@media(max-width:340px){h1{font-size:22px}.actions{gap:10px}.actions button{flex-basis:100%}}
+@supports(padding:max(0px)){
+  body{padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right));padding-bottom:max(8px,env(safe-area-inset-bottom))}
+}
+
+.vaccination{border:0;margin:0 0 20px;padding:0;min-width:0}
+.vaccination legend{font-size:16px;font-weight:700;margin-bottom:10px;padding:0}
+.vaccination-options{display:flex;flex-wrap:wrap;gap:10px}
+.vaccination-options label{display:flex;align-items:center;gap:8px;min-height:44px;padding:9px 14px;border:1px solid #b8c8df;border-radius:8px;font-size:15px;font-weight:400;margin:0;cursor:pointer}
+.vaccination-options input{width:18px;height:18px;margin:0;accent-color:#1976d2}
+.result-ctas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px;margin-top:22px}
+.cta{display:flex;align-items:center;justify-content:center;min-height:48px;padding:12px 14px;border:1px solid #1976d2;border-radius:8px;text-align:center;text-decoration:none;font-size:15px;font-weight:600;line-height:1.4}
+.cta-primary{background:#1976d2;color:#fff}.cta-secondary{background:#fff;color:#1976d2}
+.cta:focus-visible,.vaccination-options input:focus-visible{outline:3px solid #f2af32;outline-offset:3px}
 </style>
 </head>
 <body>
-<main class="wrap">
-<h1>Ai cần lưu ý hơn khi mắc sốt xuất huyết?</h1>
-<p class="sub">Chọn thông tin phù hợp để tìm hiểu yếu tố nguy cơ của bạn hoặc người thân.</p>
-
-<section class="card">
-<div>
-<h2>Chọn các trường hợp áp dụng:</h2>
-<label class="opt"><input type="checkbox" name="rf" value="child"><span class="box"></span><span>Trẻ em</span></label>
-<label class="opt"><input type="checkbox" name="rf" value="elder"><span class="box"></span><span>Người lớn tuổi có bệnh nền<small>(như cao huyết áp, tiểu đường, tim mạch...)</small></span></label>
-<label class="opt"><input type="checkbox" name="rf" value="preg"><span class="box"></span><span>Phụ nữ mang thai</span></label>
-<label class="opt"><input type="checkbox" name="rf" value="prev"><span class="box"></span><span>Đã từng mắc sốt xuất huyết<small>(tái nhiễm chủng khác)</small></span></label>
-
-<div class="field"><span class="lbl">Đã tiêm vắc xin sốt xuất huyết</span>
-<div class="radios">
-<label class="opt"><input type="radio" name="vax" value="yes"><span class="box"></span>Đã tiêm</label>
-<label class="opt"><input type="radio" name="vax" value="no" checked><span class="box"></span>Chưa tiêm</label>
-</div></div>
-
-<div class="field"><label for="prov">Khu vực</label>
-<select id="prov"><option value="">Chọn tỉnh/thành phố</option></select>
-<p class="err" id="err" role="alert"></p></div>
-
-<button class="btn primary go" id="go" type="button">Đánh giá ngay</button>
+<main class="tool">
+<h1>Kiểm tra yếu tố nguy cơ diễn biến nặng khi mắc <span class="nowrap">sốt xuất huyết</span></h1>
+<div class="columns">
+<section class="panel">
+<h2>Thông tin của bạn</h2>
+<p class="intro">Hiểu đúng nhóm nguy cơ để dự phòng sốt xuất huyết nặng là việc cấp thiết nhằm bảo vệ tính mạng và ngăn ngừa các hậu quả nghiêm trọng cho người bệnh sốt xuất huyết.</p>
+<form id="healthcheck">
+<div class="field">
+<label for="age">Bạn thuộc nhóm tuổi nào?</label>
+<select id="age" required>
+<option value="">Chọn nhóm tuổi</option>
+<option value="infant">Dưới 1 tuổi</option>
+<option value="child">Từ 1 đến dưới 18 tuổi</option>
+<option value="adult">Từ 18 đến dưới 60 tuổi</option>
+<option value="elder">Từ 60 tuổi trở lên</option>
+</select>
 </div>
+<div class="field">
+<label for="profile">Bạn có yếu tố nguy cơ nào?</label>
+<select id="profile" required>
+<option value="">Chọn yếu tố nguy cơ</option>
+<option value="pregnancy">Đang mang thai</option>
+<option value="chronic">Có bệnh lý nền</option>
+<option value="weight">Thừa cân, béo phì</option>
+<option value="previous">Từng mắc sốt xuất huyết</option>
+<option value="multiple">Có từ hai yếu tố trên trở lên</option>
+<option value="none">Không có các yếu tố trên</option>
+<option value="unknown">Chưa xác định được</option>
+</select>
 
-<div class="res" aria-live="polite">
-<svg class="gauge" viewBox="0 0 300 175" role="img" aria-label="Đồng hồ đo mức nguy cơ">
-<path d="M40 150A110 110 0 0 1 95 54.7" fill="none" stroke="#3aa655" stroke-width="40"/>
-<path d="M95 54.7A110 110 0 0 1 205 54.7" fill="none" stroke="#f5b400" stroke-width="40"/>
-<path d="M205 54.7A110 110 0 0 1 260 150" fill="none" stroke="#d63a22" stroke-width="40"/>
-<g fill="#fff" font-size="13" font-weight="800" text-anchor="middle">
-<text transform="translate(54.7 95) rotate(-60)" dy="4">THẤP</text>
-<text transform="translate(150 40)" dy="4" fill="#3a2a00">CẦN LƯU Ý</text>
-<text transform="translate(245.3 95) rotate(60)" dy="4">NGUY CƠ</text></g>
-<g class="needle" id="needle" style="transform:rotate(-90deg)">
-<path d="M146 150L150 58L154 150Z" fill="#c8321e"/><circle cx="150" cy="150" r="11" fill="#c8321e"/><circle cx="150" cy="150" r="4.5" fill="var(--hub)"/></g>
+</div>
+<div class="field">
+<label for="province">Tỉnh/thành phố</label>
+<select id="province" required><option value="">Chọn tỉnh/thành phố</option><optgroup label="Miền Bắc"><option>Hà Nội</option><option>Hải Phòng</option><option>Quảng Ninh</option><option>Hải Dương</option><option>Hưng Yên</option><option>Thái Bình</option><option>Hà Nam</option><option>Nam Định</option><option>Ninh Bình</option><option>Vĩnh Phúc</option><option>Bắc Ninh</option><option>Hà Giang</option><option>Cao Bằng</option><option>Bắc Kạn</option><option>Tuyên Quang</option><option>Lào Cai</option><option>Yên Bái</option><option>Thái Nguyên</option><option>Lạng Sơn</option><option>Bắc Giang</option><option>Phú Thọ</option><option>Điện Biên</option><option>Lai Châu</option><option>Sơn La</option><option>Hòa Bình</option></optgroup><optgroup label="Bắc Trung Bộ"><option>Thanh Hóa</option><option>Nghệ An</option><option>Hà Tĩnh</option><option>Quảng Bình</option><option>Quảng Trị</option></optgroup><optgroup label="Nam Trung Bộ"><option>Thừa Thiên Huế</option><option>Đà Nẵng</option><option>Quảng Nam</option><option>Quảng Ngãi</option><option>Bình Định</option><option>Phú Yên</option><option>Khánh Hòa</option><option>Ninh Thuận</option><option>Bình Thuận</option></optgroup><optgroup label="Tây Nguyên"><option>Kon Tum</option><option>Gia Lai</option><option>Đắk Lắk</option><option>Đắk Nông</option><option>Lâm Đồng</option></optgroup><optgroup label="Đông Nam Bộ"><option>TP. Hồ Chí Minh</option><option>Bình Dương</option><option>Đồng Nai</option><option>Bà Rịa - Vũng Tàu</option><option>Bình Phước</option><option>Tây Ninh</option></optgroup><optgroup label="Đồng bằng sông Cửu Long"><option>Long An</option><option>Tiền Giang</option><option>Bến Tre</option><option>Trà Vinh</option><option>Vĩnh Long</option><option>Đồng Tháp</option><option>An Giang</option><option>Kiên Giang</option><option>Cần Thơ</option><option>Hậu Giang</option><option>Sóc Trăng</option><option>Bạc Liêu</option><option>Cà Mau</option></optgroup></select>
+</div>
+<fieldset class="vaccination">
+<legend>Đã tiêm vắc xin sốt xuất huyết</legend>
+<div class="vaccination-options">
+<label><input type="radio" name="vaccination" value="no" checked> Chưa tiêm</label>
+<label><input type="radio" name="vaccination" value="yes"> Đã tiêm</label>
+</div>
+</fieldset>
+<div class="actions"><button type="reset" class="secondary">Làm mới</button><button type="submit" class="primary">Xem kết quả</button></div>
+<p class="note">Kết quả mang tính tham khảo, không thay thế đánh giá của nhân viên y tế.</p>
+</form>
+</section>
+<section class="panel result-panel" aria-live="polite" aria-atomic="true">
+<p id="empty-result">Nhập thông tin để kiểm tra nguy cơ diễn biến nặng.</p>
+<div id="completed-result" hidden>
+<h2>Kết quả kiểm tra</h2>
+<div class="result-body">
+<div class="status" id="status"><small>Yếu tố nguy cơ khi mắc Dengue</small><h3 id="result-title">Chưa có kết quả</h3></div>
+<svg class="gauge" viewBox="0 0 300 175" aria-hidden="true">
+<path d="M40 150A110 110 0 0 1 95 54.7" fill="none" stroke="#9dafc5" stroke-width="30"/>
+<path d="M95 54.7A110 110 0 0 1 205 54.7" fill="none" stroke="#efb947" stroke-width="30"/>
+<path d="M205 54.7A110 110 0 0 1 260 150" fill="none" stroke="#e55b55" stroke-width="30"/>
+<g class="needle" id="needle" style="transform:rotate(-90deg)"><path d="M146 150L150 60L154 150Z" fill="#24456b"/><circle cx="150" cy="150" r="10" fill="#24456b"/></g>
 </svg>
-<div class="lvl s0" id="lvl">Chưa có kết quả</div>
-<p class="adv" id="adv">Chọn thông tin bên trái rồi bấm “Đánh giá ngay”.</p>
-<p class="disc" style="margin:0;font-style:normal">Công cụ cung cấp thông tin tham khảo, không thay thế chẩn đoán y khoa.</p>
+<div class="scale"><span>Chưa ghi nhận<br>yếu tố nguy cơ</span><span>Cần đánh giá<br>thêm</span><span>Thuộc nhóm<br>nguy cơ cao</span></div>
+<p id="result-description">Hoàn tất ba thông tin bên trái, sau đó bấm “Xem kết quả”.</p>
+<p class="help" id="profile-help" hidden>Bệnh lý nền như bệnh tim, thận, gan mạn tính, đái tháo đường, hen, COPD hoặc thalassemia.</p>
+<div class="recommendation" id="recommendation" hidden><h3>Lời khuyên dành cho bạn</h3><p id="vaccine-advice"></p></div>
+<div class="result-ctas">
+<a class="cta cta-primary" href="https://nhathuoclongchau.com.vn" target="_blank" rel="noopener noreferrer">Tư vấn với Bác sĩ</a>
+<a class="cta cta-secondary" href="https://nhathuoclongchau.com.vn" target="_blank" rel="noopener noreferrer">Tìm hiểu thêm tại Long Châu</a>
+</div>
+</div>
 </div>
 </section>
-
-<div class="warn">⚠️ Nếu có dấu hiệu: Đau bụng dữ dội, nôn liên tục, chảy máu bất thường... <b>HÃY ĐI KHÁM NGAY!</b></div>
-
-<div class="ctas" id="ctas" hidden>
-<a class="btn primary" href="https://nhathuoclongchau.com.vn" target="_blank" rel="noopener">📞 Tôi muốn tư vấn bác sĩ</a>
-<a class="btn" href="https://nhathuoclongchau.com.vn" target="_blank" rel="noopener">Tìm hiểu thêm tại Long Châu ↗</a>
 </div>
-
-<p class="disc">*Công cụ chỉ cung cấp thông tin tham khảo, không dùng để chẩn đoán hoặc dự đoán mức độ nặng.<br>WHO khuyến cáo người có dấu hiệu cảnh báo cần được chăm sóc y tế ngay.</p>
+<p class="sources">Tham khảo <a href="https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue" target="_blank" rel="noopener">WHO</a> và <a href="https://benhvienhatrung.vn/wp-content/uploads/2023/07/Quyet-dinh-so-2760QD-BYT-ngay-0472023.pdf" target="_blank" rel="noopener">hướng dẫn của Bộ Y tế</a>.</p>
 </main>
 <script>
-// Nhóm khu vực: hi = 1 điểm (vùng lưu hành cao), 0 = thấp hơn
-var G=[
-["Miền Bắc",0,"Hà Nội,Hải Phòng,Quảng Ninh,Hải Dương,Hưng Yên,Thái Bình,Hà Nam,Nam Định,Ninh Bình,Vĩnh Phúc,Bắc Ninh,Hà Giang,Cao Bằng,Bắc Kạn,Tuyên Quang,Lào Cai,Yên Bái,Thái Nguyên,Lạng Sơn,Bắc Giang,Phú Thọ,Điện Biên,Lai Châu,Sơn La,Hòa Bình"],
-["Bắc Trung Bộ",0,"Thanh Hóa,Nghệ An,Hà Tĩnh,Quảng Bình,Quảng Trị"],
-["Nam Trung Bộ",1,"Thừa Thiên Huế,Đà Nẵng,Quảng Nam,Quảng Ngãi,Bình Định,Phú Yên,Khánh Hòa,Ninh Thuận,Bình Thuận"],
-["Tây Nguyên",1,"Kon Tum,Gia Lai,Đắk Lắk,Đắk Nông,Lâm Đồng"],
-["Đông Nam Bộ",1,"TP. Hồ Chí Minh,Bình Dương,Đồng Nai,Bà Rịa - Vũng Tàu,Bình Phước,Tây Ninh"],
-["Đồng bằng sông Cửu Long",1,"Long An,Tiền Giang,Bến Tre,Trà Vinh,Vĩnh Long,Đồng Tháp,An Giang,Kiên Giang,Cần Thơ,Hậu Giang,Sóc Trăng,Bạc Liêu,Cà Mau"]];
-var sel=document.getElementById("prov"),hi={};
-G.forEach(function(g){var o=document.createElement("optgroup");o.label=g[0];g[2].split(",").forEach(function(p){var e=document.createElement("option");e.value=p;e.textContent=p;o.appendChild(e);hi[p]=g[1]});sel.appendChild(o)});
-var R=[
-{a:-60,c:"s1",t:"NGUY CƠ THẤP",d:"Chưa có yếu tố nguy cơ nổi bật. Vẫn nên diệt lăng quy, ngủ màn và theo dõi sức khỏe."},
-{a:0,c:"s2",t:"CÓ YẾU TỐ CẦN LƯU Ý",d:"Nên phòng muỗi chặt chẽ và đi khám sớm nếu sốt cao liên tục từ 2 ngày."},
-{a:60,c:"s3",t:"NGUY CƠ CAO, CẦN THEO DÕI SÁT",d:"Nếu bị sốt, hãy đến cơ sở y tế sớm và theo dõi sát các dấu hiệu cảnh báo."}];
-document.getElementById("go").onclick=function(){
- var p=sel.value,err=document.getElementById("err");
- if(!p){err.textContent="Vui lòng chọn khu vực bạn đang sống.";sel.focus();return}
- err.textContent="";
- var s=0,f={};document.querySelectorAll("input[name=rf]:checked").forEach(function(c){f[c.value]=1;s+=2});
- if(hi[p])s+=1;
- if(document.querySelector("input[name=vax]:checked").value==="no")s+=1;else s=Math.max(0,s-1);
- var r=s>=4?R[2]:s>=2?R[1]:R[0];
- document.getElementById("needle").style.transform="rotate("+r.a+"deg)";
- var l=document.getElementById("lvl");l.className="lvl "+r.c;l.textContent=r.t;
- document.getElementById("adv").textContent=r.d;
- document.getElementById("ctas").hidden=false;
- if(window.innerWidth<=700)l.scrollIntoView({behavior:"smooth",block:"center"});
+const emptyResult = document.getElementById("empty-result");
+const completedResult = document.getElementById("completed-result");
+const form = document.getElementById("healthcheck");
+const age = document.getElementById("age");
+const profile = document.getElementById("profile");
+const province = document.getElementById("province");
+const title = document.getElementById("result-title");
+const description = document.getElementById("result-description");
+const status = document.getElementById("status");
+const needle = document.getElementById("needle");
+const profileHelp = document.getElementById("profile-help");
+const recommendation = document.getElementById("recommendation");
+const vaccineAdvice = document.getElementById("vaccine-advice");
+const results = {
+  none: {
+    title: "Chưa ghi nhận yếu tố nguy cơ",
+    description: "Thông tin khai báo chưa ghi nhận yếu tố nguy cơ trong danh sách. Dengue vẫn có thể diễn biến nặng. Nếu nghi mắc bệnh, hãy liên hệ cơ sở y tế để được đánh giá.",
+    angle: -60, color: "#456384", background: "#f1f5fc"
+  },
+  unknown: {
+    title: "Cần đánh giá thêm",
+    description: "Bạn chưa xác định được yếu tố nguy cơ đi kèm. Hãy trao đổi với nhân viên y tế để làm rõ yếu tố nguy cơ.",
+    angle: 0, color: "#946100", background: "#fff8e8"
+  },
+  high: {
+    title: "Thuộc nhóm nguy cơ cao diễn biến nặng",
+    description: "Thông tin khai báo cho thấy bạn thuộc nhóm cần được lưu ý khi mắc Dengue. Nếu đang mắc sốt xuất huyết hoặc nghi mắc bệnh, hãy đi khám sớm và thông báo yếu tố nguy cơ cho nhân viên y tế.",
+    angle: 60, color: "#ba302b", background: "#fff0ee"
+  }
 };
+function clearResult() {
+  emptyResult.hidden = false;
+  completedResult.hidden = true;
+  title.textContent = "Chưa có kết quả";
+  description.textContent = "Hoàn tất ba thông tin bên trái, sau đó bấm “Xem kết quả”.";
+  recommendation.hidden = true;
+  profileHelp.hidden = true;
+  vaccineAdvice.textContent = "";
+  status.removeAttribute("style");
+  needle.style.transform = "rotate(-90deg)";
+}
+form.addEventListener("submit", event => {
+  event.preventDefault();
+  emptyResult.hidden = true;
+  completedResult.hidden = false;
+  const result = age.value !== "adult" ? results.high : (results[profile.value] || results.high);
+  recommendation.hidden = result !== results.high;
+  profileHelp.hidden = !["chronic", "multiple"].includes(profile.value);
+  vaccineAdvice.textContent = "Bạn nên sớm gặp bác sĩ để được hỗ trợ tư vấn kế hoạch dự phòng bệnh.";
+  title.textContent = result.title;
+  description.textContent = result.description;
+  status.style.setProperty("--accent", result.color);
+  status.style.setProperty("--tint", result.background);
+  needle.style.transform = "rotate(" + result.angle + "deg)";
+});
+form.addEventListener("reset", clearResult);
+form.addEventListener("change", clearResult);
+
 </script>
 </body>
 </html>
