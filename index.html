@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Đánh giá nguy cơ sốt xuất huyết</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#dfe9f3;--panel:#e9f5ff;--card:#fff;--ink:#12305f;--mute:#4a5a72;--line:#cfdcea;--brand:#1c4a9c;--brand2:#f08a24;--warn-bg:#fff1e0;--warn-line:#f2c48f;--needle:#c8321e;--hub:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1622;--panel:#14243a;--card:#1b2d47;--ink:#e6efff;--mute:#a9b9d0;--line:#2b4262;--brand:#7fb0ff;--brand2:#f08a24;--warn-bg:#3a2a18;--warn-line:#7a5426;--hub:#1b2d47}}
+:root[data-theme="dark"]{--bg:#0e1622;--panel:#14243a;--card:#1b2d47;--ink:#e6efff;--mute:#a9b9d0;--line:#2b4262;--brand:#7fb0ff;--brand2:#f08a24;--warn-bg:#3a2a18;--warn-line:#7a5426;--hub:#1b2d47}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5;padding:24px 16px}
+.wrap{max-width:860px;margin:0 auto;background:var(--panel);border-radius:20px;padding:28px;box-shadow:0 6px 24px rgba(20,50,100,.12)}
+h1{margin:0 0 6px;font-size:clamp(22px,4.4vw,32px);font-weight:800;line-height:1.2;color:var(--brand)}
+.sub{margin:0 0 18px;color:var(--mute);padding-bottom:16px;border-bottom:1px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card h2{font-size:17px;margin:0 0 12px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer;font-size:15px}
+.opt input{position:absolute;opacity:0}
+.box{flex:none;width:22px;height:22px;border:2px solid var(--brand);border-radius:5px;margin-top:1px;display:grid;place-items:center}
+.opt input[type=radio]+.box{border-radius:50%}
+.opt input:checked+.box{background:var(--brand)}
+.opt input:checked+.box::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.opt input[type=radio]:checked+.box::after{width:8px;height:8px;border:0;border-radius:50%;background:#fff;transform:none}
+.opt input:focus-visible+.box{outline:3px solid var(--brand2);outline-offset:2px}
+.opt small{display:block;color:var(--mute);font-size:13px}
+.field{margin-top:14px}
+.field>label,.field>.lbl{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
+.radios{display:flex;gap:22px}
+select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink);font:inherit}
+select:focus-visible,.btn:focus-visible{outline:3px solid var(--brand2);outline-offset:2px}
+.err{color:#c0301c;font-size:13px;margin:6px 0 0;min-height:18px}
+.go{width:100%;margin-top:8px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:10px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid var(--brand);color:var(--brand);background:transparent;text-align:center}
+.btn.primary{background:linear-gradient(90deg,var(--brand),#2a5db8 55%,var(--brand2));color:#fff;border-color:transparent}
+.btn:hover{filter:brightness(1.07)}
+.res{border-left:1px solid var(--line);padding-left:24px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.gauge{width:100%;max-width:300px}
+.needle{transform-origin:150px 150px;transition:transform 1s cubic-bezier(.3,1.4,.5,1)}
+@media (prefers-reduced-motion:reduce){.needle{transition:none}}
+.lvl{font-size:20px;font-weight:800;margin:4px 0 6px;line-height:1.25}
+.lvl.s0{color:var(--mute)}.lvl.s1{color:#2e9b43}.lvl.s2{color:#d68a00}.lvl.s3{color:#c8321e}
+.adv{font-size:14px;color:var(--mute);margin:0 0 8px;max-width:34ch}
+.warn{margin-top:14px;background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:9px;padding:10px 14px;font-size:14px}
+.ctas{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.ctas[hidden]{display:none}
+.disc{margin:16px 4px 0;font-size:13px;color:var(--mute);text-align:center;font-style:italic}
+@media (max-width:700px){body{padding:12px}.wrap{padding:18px 14px}.card{grid-template-columns:1fr;padding:16px}.res{border-left:0;border-top:1px solid var(--line);padding:18px 0 0}.ctas{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<h1>Ai cần lưu ý hơn khi mắc sốt xuất huyết?</h1>
+<p class="sub">Chọn thông tin phù hợp để tìm hiểu yếu tố nguy cơ của bạn hoặc người thân.</p>
+
+<section class="card">
+<div>
+<h2>Chọn các trường hợp áp dụng:</h2>
+<label class="opt"><input type="checkbox" name="rf" value="child"><span class="box"></span><span>Trẻ em</span></label>
+<label class="opt"><input type="checkbox" name="rf" value="elder"><span class="box"></span><span>Người lớn tuổi có bệnh nền<small>(như cao huyết áp, tiểu đường, tim mạch...)</small></span></label>
+<label class="opt"><input type="checkbox" name="rf" value="preg"><span class="box"></span><span>Phụ nữ mang thai</span></label>
+<label class="opt"><input type="checkbox" name="rf" value="prev"><span class="box"></span><span>Đã từng mắc sốt xuất huyết<small>(tái nhiễm chủng khác)</small></span></label>
+
+<div class="field"><span class="lbl">Đã tiêm vắc xin sốt xuất huyết</span>
+<div class="radios">
+<label class="opt"><input type="radio" name="vax" value="yes"><span class="box"></span>Đã tiêm</label>
+<label class="opt"><input type="radio" name="vax" value="no" checked><span class="box"></span>Chưa tiêm</label>
+</div></div>
+
+<div class="field"><label for="prov">Khu vực</label>
+<select id="prov"><option value="">Chọn tỉnh/thành phố</option></select>
+<p class="err" id="err" role="alert"></p></div>
+
+<button class="btn primary go" id="go" type="button">Đánh giá ngay</button>
+</div>
+
+<div class="res" aria-live="polite">
+<svg class="gauge" viewBox="0 0 300 175" role="img" aria-label="Đồng hồ đo mức nguy cơ">
+<path d="M40 150A110 110 0 0 1 95 54.7" fill="none" stroke="#3aa655" stroke-width="40"/>
+<path d="M95 54.7A110 110 0 0 1 205 54.7" fill="none" stroke="#f5b400" stroke-width="40"/>
+<path d="M205 54.7A110 110 0 0 1 260 150" fill="none" stroke="#d63a22" stroke-width="40"/>
+<g fill="#fff" font-size="13" font-weight="800" text-anchor="middle">
+<text transform="translate(54.7 95) rotate(-60)" dy="4">THẤP</text>
+<text transform="translate(150 40)" dy="4" fill="#3a2a00">CẦN LƯU Ý</text>
+<text transform="translate(245.3 95) rotate(60)" dy="4">NGUY CƠ</text></g>
+<g class="needle" id="needle" style="transform:rotate(-90deg)">
+<path d="M146 150L150 58L154 150Z" fill="#c8321e"/><circle cx="150" cy="150" r="11" fill="#c8321e"/><circle cx="150" cy="150" r="4.5" fill="var(--hub)"/></g>
+</svg>
+<div class="lvl s0" id="lvl">Chưa có kết quả</div>
+<p class="adv" id="adv">Chọn thông tin bên trái rồi bấm “Đánh giá ngay”.</p>
+<p class="disc" style="margin:0;font-style:normal">Công cụ cung cấp thông tin tham khảo, không thay thế chẩn đoán y khoa.</p>
+</div>
+</section>
+
+<div class="warn">⚠️ Nếu có dấu hiệu: Đau bụng dữ dội, nôn liên tục, chảy máu bất thường... <b>HÃY ĐI KHÁM NGAY!</b></div>
+
+<div class="ctas" id="ctas" hidden>
+<a class="btn primary" href="https://nhathuoclongchau.com.vn" target="_blank" rel="noopener">📞 Tôi muốn tư vấn bác sĩ</a>
+<a class="btn" href="https://nhathuoclongchau.com.vn" target="_blank" rel="noopener">Tìm hiểu thêm tại Long Châu ↗</a>
+</div>
+
+<p class="disc">*Công cụ chỉ cung cấp thông tin tham khảo, không dùng để chẩn đoán hoặc dự đoán mức độ nặng.<br>WHO khuyến cáo người có dấu hiệu cảnh báo cần được chăm sóc y tế ngay.</p>
+</main>
+<script>
+// Nhóm khu vực: hi = 1 điểm (vùng lưu hành cao), 0 = thấp hơn
+var G=[
+["Miền Bắc",0,"Hà Nội,Hải Phòng,Quảng Ninh,Hải Dương,Hưng Yên,Thái Bình,Hà Nam,Nam Định,Ninh Bình,Vĩnh Phúc,Bắc Ninh,Hà Giang,Cao Bằng,Bắc Kạn,Tuyên Quang,Lào Cai,Yên Bái,Thái Nguyên,Lạng Sơn,Bắc Giang,Phú Thọ,Điện Biên,Lai Châu,Sơn La,Hòa Bình"],
+["Bắc Trung Bộ",0,"Thanh Hóa,Nghệ An,Hà Tĩnh,Quảng Bình,Quảng Trị"],
+["Nam Trung Bộ",1,"Thừa Thiên Huế,Đà Nẵng,Quảng Nam,Quảng Ngãi,Bình Định,Phú Yên,Khánh Hòa,Ninh Thuận,Bình Thuận"],
+["Tây Nguyên",1,"Kon Tum,Gia Lai,Đắk Lắk,Đắk Nông,Lâm Đồng"],
+["Đông Nam Bộ",1,"TP. Hồ Chí Minh,Bình Dương,Đồng Nai,Bà Rịa - Vũng Tàu,Bình Phước,Tây Ninh"],
+["Đồng bằng sông Cửu Long",1,"Long An,Tiền Giang,Bến Tre,Trà Vinh,Vĩnh Long,Đồng Tháp,An Giang,Kiên Giang,Cần Thơ,Hậu Giang,Sóc Trăng,Bạc Liêu,Cà Mau"]];
+var sel=document.getElementById("prov"),hi={};
+G.forEach(function(g){var o=document.createElement("optgroup");o.label=g[0];g[2].split(",").forEach(function(p){var e=document.createElement("option");e.value=p;e.textContent=p;o.appendChild(e);hi[p]=g[1]});sel.appendChild(o)});
+var R=[
+{a:-60,c:"s1",t:"NGUY CƠ THẤP",d:"Chưa có yếu tố nguy cơ nổi bật. Vẫn nên diệt lăng quy, ngủ màn và theo dõi sức khỏe."},
+{a:0,c:"s2",t:"CÓ YẾU TỐ CẦN LƯU Ý",d:"Nên phòng muỗi chặt chẽ và đi khám sớm nếu sốt cao liên tục từ 2 ngày."},
+{a:60,c:"s3",t:"NGUY CƠ CAO, CẦN THEO DÕI SÁT",d:"Nếu bị sốt, hãy đến cơ sở y tế sớm và theo dõi sát các dấu hiệu cảnh báo."}];
+document.getElementById("go").onclick=function(){
+ var p=sel.value,err=document.getElementById("err");
+ if(!p){err.textContent="Vui lòng chọn khu vực bạn đang sống.";sel.focus();return}
+ err.textContent="";
+ var s=0,f={};document.querySelectorAll("input[name=rf]:checked").forEach(function(c){f[c.value]=1;s+=2});
+ if(hi[p])s+=1;
+ if(document.querySelector("input[name=vax]:checked").value==="no")s+=1;else s=Math.max(0,s-1);
+ var r=s>=4?R[2]:s>=2?R[1]:R[0];
+ document.getElementById("needle").style.transform="rotate("+r.a+"deg)";
+ var l=document.getElementById("lvl");l.className="lvl "+r.c;l.textContent=r.t;
+ document.getElementById("adv").textContent=r.d;
+ document.getElementById("ctas").hidden=false;
+ if(window.innerWidth<=700)l.scrollIntoView({behavior:"smooth",block:"center"});
+};
+</script>
+</body>
+</html>
